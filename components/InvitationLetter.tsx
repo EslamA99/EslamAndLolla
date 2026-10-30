@@ -260,10 +260,7 @@ export function InvitationLetter({ reducedMotion }: Props) {
 
       <section className="gold-panel gold-sheet gold-sheet--tail">
 
-        <InViewReveal delay={0.2} y={24} reducedMotion={reducedMotion} className="gold-sheet__block">
-          <h2 className="gold-title gold-title--sm">{COPY.blessing.ar}</h2>
-          <CongratulationsNote />
-        </InViewReveal>
+        
 
         <footer className="letter-footer">
           <p>
