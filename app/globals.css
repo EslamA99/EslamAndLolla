@@ -139,27 +139,35 @@ body {
   }
 
   .gold-art__photo {
-    left: auto !important;
-    right: 4vw !important;
-    width: min(42vw, 75svh) !important;
+    left: 50% !important;
+    right: auto !important;
+    width: min(46vw, 69svh) !important;
     height: 92svh !important;
     top: 4svh !important;
+    transform: translateX(-50%);
     border-radius: 18px;
     box-shadow: 0 24px 60px rgba(90, 60, 20, 0.35);
     object-position: center 30%;
   }
 
-  .gold-hero {
-    justify-content: flex-start;
+  .gold-hero.gold-hero {
+    align-items: flex-end;
   }
 
-  .gold-hero__copy {
-    width: min(46vw, 640px);
-    margin-inline-start: 4vw;
+  .gold-hero .gold-hero__copy {
+    width: min(46vw, 69svh);
+    padding: 0 20px 9svh;
   }
 
-  .gold-hero__veil {
-    background: linear-gradient(90deg, rgba(253, 248, 238, 0.78) 0%, rgba(253, 248, 238, 0.55) 50%, transparent 58%);
+  .gold-hero .gold-hero__veil {
+    background: linear-gradient(0deg, rgba(253, 248, 238, 0.92) 0%, rgba(253, 248, 238, 0.6) 30%, transparent 55%);
+    left: 50%;
+    right: auto;
+    width: min(46vw, 69svh);
+    top: 4svh;
+    bottom: 4svh;
+    transform: translateX(-50%);
+    border-radius: 18px;
   }
 }
 
