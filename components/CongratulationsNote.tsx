@@ -2,8 +2,9 @@
 
 import { FormEvent, useState } from "react";
 import { COPY } from "@/lib/constants";
-import { addWish, isGuestbookConfigured } from "@/lib/guestbook";
+import { addWish, isGuestbookConfigured, sanitizeWishInput } from "@/lib/guestbook";
 import { MESSAGE_MAX, NAME_MAX } from "@/lib/guestbook-config";
+import { isNotifyConfigured, sendWishEmail } from "@/lib/notify";
 
 type Status = "idle" | "saving" | "saved" | "error";
 
@@ -13,7 +14,8 @@ export function CongratulationsNote() {
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
-  const configured = isGuestbookConfigured();
+  const emailConfigured = isNotifyConfigured();
+  const configured = emailConfigured || isGuestbookConfigured();
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -33,7 +35,16 @@ export function CongratulationsNote() {
     setStatus("saving");
     setError("");
     try {
-      await addWish(name, message);
+      const clean = sanitizeWishInput(name, message);
+      if (!clean) throw new Error("من فضلكم اكتبوا الاسم وكلمة التهنئة.");
+
+      if (emailConfigured) {
+        await sendWishEmail(clean.name, clean.message);
+        // Optional guestbook copy; the email is what matters.
+        if (isGuestbookConfigured()) addWish(name, message).catch(() => {});
+      } else {
+        await addWish(name, message);
+      }
       setStatus("saved");
       setName("");
       setMessage("");
