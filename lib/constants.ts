@@ -58,8 +58,8 @@ export const COPY = {
   },
   dateCardLabel: { ar: "موعد الزفاف", en: "Wedding Date" },
   dateCardNote: {
-    ar: "في ليلة مليئة بالفرح والحب ننتظر حضوركم الكريم",
-    en: "On a night filled with joy and love, we await your presence.",
+    ar: "بكل الحب والسعادة ندعوكم لحضور حفل زفافنا، ونحلم أن تكون أولى ذكرياتها محاطة بوجوه نحبها وقلوب نتمنى وجودها دائمًا.",
+    en: "With love and joy, we invite you to attend our wedding. We dream of creating our first memories as a married couple while surrounded by the faces we love—people whose presence we always cherish.",
   },
   verseShort: {
     ar: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً",
