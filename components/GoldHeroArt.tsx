@@ -15,16 +15,25 @@ const PETALS = [
   { left: "92%", delay: "9.4s", duration: "16s", size: 11 },
 ] as const;
 
+const PHOTO = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/invite/tall.jpeg`;
+
 export function GoldHeroArt() {
   return (
     <div className="gold-art" aria-hidden="true">
       <div className="gold-art__ken">
         <Image
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/invite/tall.jpeg`}
+          src={PHOTO}
+          alt=""
+          fill
+          sizes="100vw"
+          className="gold-art__backdrop"
+        />
+        <Image
+          src={PHOTO}
           alt=""
           fill
           preload
-          sizes="100vw"
+          sizes="(min-width: 900px) 50vw, 100vw"
           className="gold-art__photo"
         />
       </div>
