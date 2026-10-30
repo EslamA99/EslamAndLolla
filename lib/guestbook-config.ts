@@ -9,9 +9,9 @@ export const GUESTBOOK_SCRIPT_URL =
 
 /** Unclaimed MantleDB namespace — public read/write for the wedding guestbook. */
 export const MANTLE_NAMESPACE =
-  process.env.NEXT_PUBLIC_MANTLE_NAMESPACE?.trim() || "islam-kholoud-tahani-2026";
+  process.env.NEXT_PUBLIC_MANTLE_NAMESPACE?.trim() || "Eslam-kholoud-tahani-2026";
 
-export const MANTLE_BASE_URL = "https://mantledb.sh/v2";
+export const MANTLE_BASE_URL = "https://script.google.com/macros/s/AKfycbx0r8e6fJFxKacXeS8BJJZpnrtPHChywb_3sCnWvX-4RmbhEG1WiiEiRfnhK0upKYwi5Q/exec";
 
 export const NAME_MAX = 60;
 export const MESSAGE_MAX = 500;
