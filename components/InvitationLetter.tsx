@@ -259,18 +259,6 @@ export function InvitationLetter({ reducedMotion }: Props) {
       </section>
 
       <section className="gold-panel gold-sheet gold-sheet--tail">
-        <InViewReveal delay={0.1} y={24} reducedMotion={reducedMotion} className="gold-sheet__block">
-          <h2 className="gold-title gold-title--sm">{COPY.timeline.ar}</h2>
-          <p className="sheet__body">{COPY.timelineBody.ar}</p>
-          <div className="timeline-card">
-            {TIMELINE.map((item) => (
-              <div key={item.title.ar} className="timeline-card__item">
-                <span>{item.time.ar}</span>
-                <strong>{item.title.ar}</strong>
-              </div>
-            ))}
-          </div>
-        </InViewReveal>
 
         <InViewReveal delay={0.2} y={24} reducedMotion={reducedMotion} className="gold-sheet__block">
           <h2 className="gold-title gold-title--sm">{COPY.blessing.ar}</h2>
@@ -278,7 +266,6 @@ export function InvitationLetter({ reducedMotion }: Props) {
         </InViewReveal>
 
         <footer className="letter-footer">
-          <span className="letter-footer__monogram">{COUPLE.monogram}</span>
           <p>
             {COUPLE.first} و {COUPLE.second}
           </p>
