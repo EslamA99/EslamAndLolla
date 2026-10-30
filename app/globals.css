@@ -122,7 +122,45 @@ body {
 
 .gold-art__photo {
   object-fit: cover;
-  object-position: center 78%;
+  object-position: center 30%;
+}
+
+.gold-art__backdrop {
+  display: none;
+  object-fit: cover;
+  filter: blur(28px) saturate(1.1);
+  transform: scale(1.15);
+}
+
+/* Wide screens: show the full portrait on one side instead of a tiny crop. */
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+  .gold-art__backdrop {
+    display: block;
+  }
+
+  .gold-art__photo {
+    left: auto !important;
+    right: 4vw !important;
+    width: min(42vw, 75svh) !important;
+    height: 92svh !important;
+    top: 4svh !important;
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(90, 60, 20, 0.35);
+    object-position: center 30%;
+  }
+
+  .gold-hero {
+    justify-content: flex-start;
+  }
+
+  .gold-hero__copy {
+    width: min(46vw, 640px);
+    margin-inline-start: 4vw;
+  }
+
+  .gold-hero__veil {
+    background: linear-gradient(90deg, rgba(253, 248, 238, 0.78) 0%, rgba(253, 248, 238, 0.55) 50%, transparent 58%);
+  }
 }
 
 .gold-art__petals {
